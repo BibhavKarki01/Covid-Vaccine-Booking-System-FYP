@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/user/register.css">
+
+    <script>
+        $(document).ready(function() {
+
+            $("#myToast").toast("show");
+
+        });
+    </script>
+</head>
+
+<div class="container mt-5" style="width: 760px;  background-image: linear-gradient(to left, #353d44, #226669);
+color: white; box-shadow: 0px 0px 10px 0px #000; margin-top: 50px;">
+    <form name="myform" class="form-group" method="post" action="/registeruserdetails">
+        <h2 style="text-align:center; font-weight:bold; font-size:25px">User Registration Form</h2>
+        <div class="row ">
+            <div class="col-md-12">
+                <p>Person ID will be verified while Injecting Vaccine.Please Kindly Provide a correct information.</p>
+
+                <% if(repeatcitizen) { %>
+                    <div class="toast" id="myToast">
+                        <div class="toast-body text-danger">
+                            Citizenship match
+                        </div>
+                    </div>
+                    <%}       %>
+                        <% if(repeatemail) { %>
+                            <div class="toast" id="myToast">
+                                <div class="toast-body text-danger">
+                                    Email match
+                                </div>
+                            </div>
+                            <%}       %>
+                                <label for="inputname">Citizenship ID </label>
+                                <input type="number" name="citizenshipid" class="form-control" placeholder="Citizenship ID" id="citizenship" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputname">First name </label>
+                <input type="text" class="form-control" name="firstname" placeholder="First name" required>
+            </div>
+
+
+            <div class="col-md-6">
+                <label for="inputname">Last name </label>
+                <input type="text" class="form-control" placeholder="Last name" name="lastname" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email">Email </label>
+                <input type="email" pattern=".+@globex\.com" class="form-control" placeholder="email" name="email" required>
+            </div>
+            <div class="col-md-6">
+                <label for="password">Password </label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="col-md-6">
+                <label for="dateofbirth">Date of Birth:</label>
+                <input type="date" class="form-control" id="dateofbirth" name="dateofbirth" name="dateofbirth" required>
+            </div>
+            <div class="col-md-6 mt-4 d-flex">
+                <label for="gender mt-2">Gender:</label>
+
+                <div class="mt-1  ms-2">
+                    <input type="radio" name="gender" value="male" id="male" required>
+
+                    <label for="male" class="radio-inline">Male</label>
+
+                    <input type="radio" name="gender" value="female" id="female" required>
+                    <label for="female" class="radio-inline">Female</label>
+
+                    <input type="radio" name="gender" value="other" id="others" required>
+
+                    <label for="others" class="radio-inline">Others</label>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12 mt-2 text-center m-2">
+                <button type="submit" class=" btn btn-primary">Register</button>
+
+            </div>
+            <div class="mt-1 text-center">
+                <label class="form-label account"> Already have an Account? &nbsp;<a href="/user/login"  style="text-decoration:none;">Sign In</a></label>
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $(".toast").toast('show');
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>
